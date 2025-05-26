@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>IP Info</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #eef1f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .box {
+      background: #fff;
+      padding: 2rem 3rem;
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    .ip {
+      font-weight: bold;
+      color: #0077cc;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>IP Address Info</h1>
+    <p>You accessed the server from: <span class="ip">{{clientIP}}</span></p>
+    <p>The server is running on: <span class="ip">{{serverIP}}</span></p>
+  </div>
+</body>
+</html>
