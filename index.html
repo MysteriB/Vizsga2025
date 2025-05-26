@@ -1,8 +1,121 @@
-<html>
-  <head>
-    <title>My web page</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vizsga WebServer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: url('server-bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+    }
+
+    .main-container {
+      background-color: rgba(255, 255, 255, 0.92);
+      width: 85%;
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #000;
+      padding-bottom: 10px;
+    }
+
+    .info-box {
+      background-color: #f1f1f1;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      text-align: center;
+      border: 1px solid #ccc;
+    }
+
+    .logo-ip-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .logo-box {
+      flex: 1;
+      background-color: #f1f1f1;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      border: 1px solid #ccc;
+      max-width: 250px;
+    }
+
+    .logo-box img {
+      max-width: 100%;
+      height: auto;
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+    }
+
+    .ip-box {
+      background: #fff;
+      padding: 2rem 3rem;
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .logo-ip-row {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .logo-box, .ip-box {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <h1>Vizsga WebServer</h1>
+
+    <div class="info-box">
+      If you did everything correctly, this page is accessible from the client PC.<br>
+      Check the IP Addresses to verify if that's the case. <br>
+	  Note: The webpage may or may not function as intended. If a bug occured please ignore it for the duration of the test.
+    </div>
+
+    <div class="logo-ip-row">
+      <div class="logo-box">
+        <img src="your_logo.png" alt="Göndöcs Logo">
+        <div style="margin-top: 10px;">Göndöcs Benedek Katolikus Technikum</div>
+      </div>
+
+	<div class="ip-box">
+		<h1>IP Address Info</h1>
+		<p>You accessed the server from: <span class="ip">{{clientIP}}</span></p>
+		<p>The server is running on: <span class="ip">{{serverIP}}</span></p>
+	</div>
+  </div>
+
+  <script>
+    // Offline fallback IP (replace with real IP if server injects it)
+    document.getElementById('client-ip').textContent = "{{clientIP}}" || "127.0.0.1";
+  </script>
+</body>
 </html>
